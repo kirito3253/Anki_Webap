@@ -1,0 +1,166 @@
+@charset "UTF-8";
+body{
+	background: lavender;
+}
+
+/*ここからviewquestion*/
+.q_num{
+	text-align: center;
+	font-size: 50px;
+	position: relative;
+}
+
+.question{
+	width: 60%;
+	min-height: 200px;
+	height: auto;
+	border-radius: 50px;
+	padding: 15px;
+	justify-content: center;
+	align-content: center;
+	font-size: 2vw;
+	font-size: 2vh;
+	position: relative;
+	margin: 0 auto;
+	background: white;
+}
+
+.choices{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	position: relatives;
+}
+
+button{
+	width: 600px;
+	height: 100px;
+	margin: 20px;
+	border-radius: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	-webkit-text-stroke: 1px black;
+	text-stroke: 1px black;
+}
+
+.choices{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	position: relative;
+	top: 100px;
+}
+
+#choice_a{
+	background: red;
+}
+
+#choice_b{
+	background: blue;
+}
+
+#choice_c{
+	background: yellow;
+}
+
+#choice_d{
+	background: green;
+}
+/*ここまで*/
+
+/*ここからcorrect, wrong*/
+.tf_message{
+	font-size: 70px;
+	text-align: center;
+	position: relative;
+}
+
+.tf_mark{
+	text-align:center;
+	position: relative;
+}
+
+.correct_choice{
+	font-size: 50px;
+	text-align: center;
+	position: relative;
+}
+
+.next{
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+	/*top: 100px;*/
+}
+
+.next_btn{
+	border: 2px solid black;
+	background: white;
+	border-radius: 10px;
+	padding: 10px;
+ 	text-decoration: none;
+ 	color: black;
+}
+/*ここまで*/
+
+/*ここからresultpage*/
+:root{
+	--percentage: 30%;
+}
+
+.evaluation{
+	text-align: center;
+	font-size: 80px;
+	position: relative;
+}
+
+/*円グラフ*/
+.score{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	height: 400px;
+	font-size: 50px;
+	font-weight: 700;
+	background-image: radial-gradient(#f2f2f2 60%, transparent 61%), conic-gradient(#d5525f 0% var(--percentage), #d9d9d9 var(--percentage) 100%);
+	border-radius: 50%;
+}
+
+.back{
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+	top: 80px;
+}
+
+.back_btn{
+	border: 2px solid black;
+	border-radius: 10px;
+	background: white;
+	padding: 10px;
+ 	text-decoration: none;
+ 	color: black;
+}
+
+/*変更部分*/
+.notification{
+	text-align: center;
+	position: relative;
+	top: 30px;
+}
+
+.note_btn{
+	font-size: 30px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background: white;
+	padding: 10px;
+ 	text-decoration: none;
+ 	color: black;
+}

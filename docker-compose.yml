@@ -1,0 +1,29 @@
+# 高専生クイズを Docker で起動するための設定
+# 起動: docker compose up --build   →  http://localhost:8080/webapp-group09/
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: docker/webapp/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      db-mysql:
+        condition: service_healthy
+  db-mysql:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_DATABASE: db_dev
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+      MYSQL_ROOT_PASSWORD: dev
+      TZ: Asia/Tokyo
+    volumes:
+      - ./src/main/java/design/jikken.sql:/sql/jikken.sql:ro
+      - ./docker/db/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
+    healthcheck:
+      test: ["CMD", "mysql", "-udev", "-pdev", "-e", "SELECT 1 FROM db_dev.Questions LIMIT 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
